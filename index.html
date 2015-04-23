@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Show or Close Layer</title>
+<style>
+*{ margin:0; padding:0;}
+ul{ list-style:none;}
+.t{ padding-bottom:12px;}
+.st{ padding:6px 0 4px;}
+.c{ margin:0 0 30px 0;}
+pre{ padding:12px 8px; margin-bottom:30px; background-color:#EEECCC;}
+body{font-family:Arial, Helvetica, sans-serif; font-size:12px;}
+
+h3{ height:24px; background:#EEE;}
+.layer{ width:480px; height:260px; border:1px solid #669966; background-color:#FFF; display:none;}
+.upperLayer{ width:280px; height:160px; border:1px solid #FF0000; background-color:#FFF; display:none;}
+.upperLayer2{ width:140px; height:80px; border:1px solid #000; background-color:#FFF; display:none;}
+</style>
+<script src="jquery.js"></script>
+<script src="layers2.0.js"></script>
+<script>
+$(function(){
+	$(".pop").click(function(){
+		$(".layer").showLayers({closeLayer:{btn:".close",auto:true,seconds:4},Scroll:false,mover:"h3"});
+	});
+	$(".opentUpperLayer").click(function(){
+		$(".upperLayer").showLayers({closeLayer:{btn:".close"},maskLayer:{backgroundColor:"#000",transparent:"0.1"},level:5,mover:"h4"});
+	});
+	$(".opentUpperLayer2").click(function(){
+		$(".upperLayer2").showLayers({closeLayer:{btn:".close"},maskLayer:{backgroundColor:"#000",transparent:"0.1"},level:6,mover:"h4"});
+	});
+	
+	$(".closelayer").click(function(){
+		$(".upperLayer2").closeLayers();
+	});
+});
+</script>
+</head>
+
+<body>
+<h4 class="t">弹层插件<span>v2.0</span></h4>
+<p class="st">演示效果：</p>
+<div class="c">
+<!------------------------------->
+<a href="javascript:void(0)" class="pop">弹层</a>
+<div class="layer">
+	<h3>Layer</h3>
+    <a href="#" class="close">close</a>
+    <a href="javascript:void(0)" class="opentUpperLayer">层上层</a><br>
+    <p></p>
+</div>
+<div class="upperLayer">
+	<h3>I am upper layer!</h3>
+	<a href="#" class="close">close</a><br>
+    <a href="javascript:void(0)" class="opentUpperLayer2">层上层</a>
+</div>
+<div class="upperLayer2">
+	<h4>I am upper layer2!</h4>
+	<a href="#" class="close">close</a>
+    <a href="javascript:void(0)" class="closelayer">closelayer</a>
+</div>
+
+<!------------------------------->
+</div>
+<p class="st">使用方法：</p>
+<pre>
+<code>$("selector").showLayers({</code>
+    <code>closeLayer:{btn:"",auto:false,seconds:3,callback:function(){}}, // 关闭层</code>		
+    <code>maskLayer:{backgroundColor:"#000",transparent:"0.3"}, // 设置遮罩层的样式</code>	
+    <code>mover:"selector", // 可以触发移动该层的Selector</code>	
+    <code>level:1 // 正整数，数字越到层级越高，默认为1</code>	
+    <code>Scroll:boolean // true 为随屏滚动 false 为不滚动，默认为false</code>
+    <code>callback:function(){}, // 触发此插件后执行的回调函数</code>
+<code>})</code>
+
+<code>$("selector").closelayer(callback); // 用于其他事件关闭弹出层，callback为关闭弹出层后执行的回调函数</code>
+</pre>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<a href="javascript:void(0)" class="pop">弹层</a>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>111111111111111
+</body>
+</html>
