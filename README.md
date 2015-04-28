@@ -18,5 +18,5 @@ $("selector").showLayers({
 ```
 
 ```js
-$("selector").closeLayer(callback); // 用于其他事件关闭层，callback 为关闭层后执行的回调函数
+$("selector").closeLayers(callback); // 用于其他事件关闭层，callback 为关闭层后执行的回调函数
 ```
