@@ -8,7 +8,7 @@
 
 ```js
 $("selector").showLayers({
-    closeLayer: {btn: "", auto: false, seconds: 3, callback: function () {}}, // 关闭层		
+    closeLayer: {btn: "selector", auto: false, seconds: 3, callback: function () {}}, // 关闭层		
     maskLayer: {backgroundColor: "#000", transparent: "0.3"}, // 设置遮罩层的样式	
     mover: "selector", // 可以触发移动该层的 Selector	
     level: 1, // 正整数，数字越到层级越高，默认为 1	
@@ -18,5 +18,5 @@ $("selector").showLayers({
 ```
 
 ```js
-$("selector").closelayer(callback); // 用于其他事件关闭弹出层，callback 为关闭弹出层后执行的回调函数
+$("selector").closeLayer(callback); // 用于其他事件关闭层，callback 为关闭层后执行的回调函数
 ```
